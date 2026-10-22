@@ -1,0 +1,31 @@
+.sclase{
+  background-color: red;
+  font-size: 15px;
+}
+#sid{
+  background-color: rgb(30, 0, 255);
+  font-size: 15px;
+}
+//selector
+p{
+  color: white;
+  font-weight: bold;
+}
+div{
+  padding: 20px, 10px, 10px, 10px;
+  margin: 10px;
+  border-radius:20px, 30px;
+}
+.sclase {
+  background: #f4f5f8;
+  border: 1px solid #d7d8dc;
+  padding: 15px;
+  border-radius: 8px;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  
+  p {
+    margin: 0;
+    color: #333;
+  }
+}

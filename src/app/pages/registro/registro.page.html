@@ -1,0 +1,237 @@
+<ion-content [fullscreen]="true" class="registro-page">
+
+  <div class="game-screen">
+
+    <video
+      class="video-fondo"
+      autoplay
+      muted
+      loop
+      playsinline>
+
+      <source
+        src="assets/videos/iniciopacman.mp4"
+        type="video/mp4">
+
+    </video>
+
+    <div class="dark-overlay"></div>
+
+
+    <div class="registro-container">
+
+      <div class="logo-area">
+
+        <div class="mini-pacman"></div>
+
+        <h1>PAC-MAN</h1>
+
+        <h2>CREAR JUGADOR</h2>
+
+        <p>CREA TU CUENTA</p>
+
+      </div>
+
+
+      <!-- FOTO -->
+      <div class="avatar-section">
+
+        <div class="avatar-preview">
+
+          <img
+            *ngIf="foto"
+            [src]="foto"
+            alt="Foto de perfil">
+
+          <ion-icon
+            *ngIf="!foto"
+            name="person-outline">
+          </ion-icon>
+
+        </div>
+
+
+        <div class="photo-buttons">
+
+          <ion-button
+            type="button"
+            size="small"
+            class="photo-button"
+            (click)="tomarFoto()">
+
+            <ion-icon
+              name="camera-outline"
+              slot="start">
+            </ion-icon>
+
+            TOMAR FOTO
+
+          </ion-button>
+
+
+          <ion-button
+            type="button"
+            size="small"
+            fill="outline"
+            class="gallery-button"
+            (click)="elegirGaleria()">
+
+            <ion-icon
+              name="images-outline"
+              slot="start">
+            </ion-icon>
+
+            GALERÍA
+
+          </ion-button>
+
+        </div>
+
+      </div>
+
+
+      <form class="registro-form">
+
+        <!-- NOMBRE -->
+        <div class="field-group">
+
+          <label>NOMBRE DE USUARIO</label>
+
+          <div class="input-container">
+
+            <ion-icon name="person-outline"></ion-icon>
+
+            <ion-input
+              type="text"
+              name="nombre"
+              minlength="3"
+              maxlength="20"
+              placeholder="Jugador01"
+              [(ngModel)]="nombre">
+            </ion-input>
+
+          </div>
+
+        </div>
+
+
+        <!-- CORREO -->
+        <div class="field-group">
+
+          <label>CORREO ELECTRÓNICO</label>
+
+          <div class="input-container">
+
+            <ion-icon name="mail-outline"></ion-icon>
+
+            <ion-input
+              type="email"
+              name="correo"
+              inputmode="email"
+              maxlength="100"
+              placeholder="jugador@correo.com"
+              [(ngModel)]="correo">
+            </ion-input>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONTRASEÑA -->
+        <div class="field-group">
+
+          <label>CONTRASEÑA</label>
+
+          <div class="input-container">
+
+            <ion-icon
+              name="lock-closed-outline">
+            </ion-icon>
+
+            <ion-input
+              [type]="mostrarContrasena ? 'text' : 'password'"
+              name="contrasena"
+              minlength="8"
+              maxlength="20"
+              placeholder="********"
+              [(ngModel)]="contrasena"
+              (ionInput)="quitarEspaciosContrasena($event)">
+            </ion-input>
+
+            <ion-button
+              type="button"
+              fill="clear"
+              class="eye-button"
+              (click)="cambiarVisibilidad()">
+
+              <ion-icon
+                [name]="mostrarContrasena
+                ? 'eye-off-outline'
+                : 'eye-outline'">
+              </ion-icon>
+
+            </ion-button>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONFIRMAR -->
+        <div class="field-group">
+
+          <label>
+            CONFIRMAR CONTRASEÑA
+          </label>
+
+          <div class="input-container">
+
+            <ion-icon
+              name="shield-checkmark-outline">
+            </ion-icon>
+
+            <ion-input
+              [type]="mostrarContrasena ? 'text' : 'password'"
+              name="confirmarContrasena"
+              minlength="8"
+              maxlength="20"
+              placeholder="********"
+              [(ngModel)]="confirmarContrasena"
+              (ionInput)="quitarEspaciosConfirmacion($event)">
+            </ion-input>
+
+          </div>
+
+        </div>
+
+
+        <ion-button
+          type="button"
+          expand="block"
+          class="main-button"
+          (click)="registrarse()">
+
+          CREAR JUGADOR
+
+        </ion-button>
+
+
+        <ion-button
+          type="button"
+          expand="block"
+          fill="outline"
+          class="secondary-button"
+          routerLink="/login">
+
+          VOLVER AL INICIO
+
+        </ion-button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</ion-content>

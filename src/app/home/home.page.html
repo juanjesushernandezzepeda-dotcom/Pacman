@@ -1,0 +1,143 @@
+<div class="ion-page" id="main-content">
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        header pagina
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="sclase">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quos velit, labore ratione architecto ut, enim
+        laudantium quisquam perspiciatis nihil explicabo ducimus assumenda, natus similique dolorum temporibus aliquam
+        eveniet? Voluptatum.</p>
+    </div>
+    <div id="sid">
+      <p>Selector de ID</p>
+    </div>
+    <div>
+      <p>Selector de etiqueta</p>
+    </div>
+    <div>
+      <p>Selector de etiqueta2</p>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
+          <div class="sclase">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quos velit, labore ratione architecto ut,
+              enim laudantium quisquam perspiciatis nihil explicabo ducimus assumenda, natus similique dolorum
+              temporibus aliquam eveniet? Voluptatum.</p>
+          </div>
+        </ion-col>
+        <ion-col size="6" size-sm="12" size-lg="6 ">
+          <div class="sclase">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quos velit, labore ratione architecto ut,
+              enim laudantium quisquam perspiciatis nihil explicabo ducimus assumenda, natus similique dolorum
+              temporibus aliquam eveniet? Voluptatum.</p>
+          </div>
+        </ion-col>
+        <ion-col size="6" size-sm="12" size-lg="6">
+          <div class="sclase">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quos velit, labore ratione architecto ut,
+              enim laudantium quisquam perspiciatis nihil explicabo ducimus assumenda, natus similique dolorum
+              temporibus aliquam eveniet? Voluptatum.</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-content class="ion-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" size-sm="4" size-md="3" size-lg="2">
+            <div class="sclase">
+              <p><strong>C1:</strong> Fútbol: Control del balón, estrategia táctica y trabajo en equipo en la cancha.
+              </p>
+            </div>
+          </ion-col>
+          <ion-col size="6" size-sm="4" size-md="3" size-lg="2">
+            <div class="sclase">
+              <p><strong>C2:</strong> Entrenamiento Funcional: Mejora de la agilidad, fuerza y resistencia global.</p>
+            </div>
+          </ion-col>
+          <ion-col size="6" size-sm="4" size-md="3" size-lg="2">
+            <div class="sclase">
+              <p><strong>C3:</strong> Natación: Desarrollo de la capacidad aerodinámica y tonificación muscular
+                completa.</p>
+            </div>
+          </ion-col>
+          <ion-col size="6" size-sm="4" size-md="3" size-lg="2">
+            <div class="sclase">
+              <p><strong>C4:</strong> Ciclismo: Resistencia cardiovascular y fortalecimiento de piernas en ruta.</p>
+            </div>
+          </ion-col>
+          <ion-col size="6" size-sm="4" size-md="3" size-lg="2">
+            <div class="sclase">
+              <p><strong>C5:</strong> Atletismo: Pruebas de velocidad, salto y resistencia de alto rendimiento.</p>
+            </div>
+          </ion-col>
+          <ion-col size="6" size-sm="4" size-md="3" size-lg="2">
+            <div class="sclase">
+              <p><strong>C6:</strong> Yoga y Flexibilidad: Posturas para el equilibrio mental y la recuperación física.
+              </p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button id="open-action-sheet" class="ion-text-capitalize">Abrir opciones</ion-button>
+          <ion-action-sheet trigger="open-action-sheet" mode="ios" header="Actions"
+            [buttons]="botones"></ion-action-sheet>
+
+        </ion-col>
+        ion-col size="12" class="ion-text-center">
+        <ion-button id="open-action-sheet" class="ion-text-capitalize">Abrir opciones</ion-button>
+        <ion-action-sheet trigger="open-action-sheet" mode="ios" header="Actions"
+          [buttons]="botones"></ion-action-sheet>
+      </ion-row>
+    </ion-grid>
+
+
+    <!-- comienzo de nustro juego de pacman -->
+    ion-content class="ion-padding">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+
+</div>
+
+<ion-menu contentId="main-content" side="start" type="push">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title> Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <ion-button ion-item routerLink="/acordeon">
+        <ion-icon name="list"></ion-icon>
+        <ion-label>Acordeon</ion-label>
+      </ion-button>
+    </ion-menu-toggle>
+
+  </ion-content>
+</ion-menu>

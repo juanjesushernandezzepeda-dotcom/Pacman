@@ -1,0 +1,152 @@
+<ion-content [fullscreen]="true" class="auth-page">
+
+  <div class="game-screen">
+
+    <!-- VIDEO DE FONDO -->
+    <video
+      class="video-fondo"
+      autoplay
+      muted
+      loop
+      playsinline>
+
+      <source
+        src="assets/videos/iniciopacman.mp4"
+        type="video/mp4">
+
+    </video>
+
+    <div class="dark-overlay"></div>
+
+    <div class="auth-container">
+
+      <div class="logo-area">
+
+        <div class="mini-pacman"></div>
+
+        <h1>PAC-MAN</h1>
+
+        <h2>LEYENDAS DEL LABERINTO</h2>
+
+        <p>ENTRA EN EL LABERINTO</p>
+
+      </div>
+
+
+      <form class="auth-form">
+
+        <!-- CORREO -->
+        <div class="field-group">
+
+          <label>CORREO ELECTRÓNICO</label>
+
+          <div class="input-container">
+
+            <ion-icon name="mail-outline"></ion-icon>
+
+            <ion-input
+              type="email"
+              name="correo"
+              inputmode="email"
+              maxlength="100"
+              placeholder="jugador@correo.com"
+              [(ngModel)]="correo">
+            </ion-input>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONTRASEÑA -->
+        <div class="field-group">
+
+          <label>CONTRASEÑA</label>
+
+          <div class="input-container">
+
+            <ion-icon
+              name="lock-closed-outline">
+            </ion-icon>
+
+            <ion-input
+              [type]="mostrarContrasena ? 'text' : 'password'"
+              name="contrasena"
+              minlength="8"
+              maxlength="20"
+              placeholder="********"
+              [(ngModel)]="contrasena"
+              (ionInput)="quitarEspaciosContrasena($event)">
+            </ion-input>
+
+            <ion-button
+              type="button"
+              fill="clear"
+              class="eye-button"
+              (click)="cambiarVisibilidad()">
+
+              <ion-icon
+                [name]="mostrarContrasena
+                ? 'eye-off-outline'
+                : 'eye-outline'">
+              </ion-icon>
+
+            </ion-button>
+
+          </div>
+
+        </div>
+
+
+        <!-- INICIAR PARTIDA -->
+        <ion-button
+          type="button"
+          expand="block"
+          class="main-button"
+          (click)="iniciarSesion()">
+
+          <ion-icon
+            name="play-outline"
+            slot="start">
+          </ion-icon>
+
+          INICIAR PARTIDA
+
+        </ion-button>
+
+
+        <!-- CREAR CUENTA -->
+        <ion-button
+          type="button"
+          expand="block"
+          fill="outline"
+          class="secondary-button"
+          routerLink="/registro">
+
+          <ion-icon
+            name="person-add-outline"
+            slot="start">
+          </ion-icon>
+
+          CREAR CUENTA
+
+        </ion-button>
+
+
+        <!-- RECUPERAR CONTRASEÑA -->
+        <button
+          type="button"
+          class="text-button"
+          routerLink="/recuperar-password">
+
+          ¿Olvidaste tu contraseña?
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</ion-content>
